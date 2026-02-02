@@ -24,8 +24,10 @@ export function CheckoutPage({ cart }) {
     return (
         <>
             <title>Checkout</title>
-            
+            {/* {cart.map((cartItem) => {
+                return(
 
+           
             <div key={cartItem.productId}
                 className="checkout-header">
                 <div className="header-content">
@@ -47,6 +49,8 @@ export function CheckoutPage({ cart }) {
                 </div>
             </div>
 
+                 )
+            })} */}
             <div className="checkout-page">
                 <div className="page-title">Review your order</div>
 
@@ -65,7 +69,7 @@ export function CheckoutPage({ cart }) {
 
                                     <div className="cart-item-details-grid">
                                         <img className="product-image"
-                                            src="cartItem.product.image" />
+                                            src={cartItem.product.image} />
 
                                         <div className="cart-item-details">
                                             <div className="product-name">
@@ -93,7 +97,7 @@ export function CheckoutPage({ cart }) {
                                             <div className="delivery-options-title">
                                                 Choose a delivery option:
                                             </div>
-                                            {deliveryOptions.map((deliveryOptions) => {
+                                            {deliveryOptions.map((deliveryOption) => {
                                                 let priceString = 'FREE Shipping';
 
                                                 if (deliveryOption.priceCents > 0) {
